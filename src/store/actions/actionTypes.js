@@ -1,0 +1,13 @@
+export const SIGN_IN = 'SIGN_IN';
+export const SIGN_OUT = 'SIGN_OUT';
+export const GET_ALL_ARTICLES = 'GET_ALL_ARTICLES';
+export const GET_ALL_COMMENTS = 'GET_ALL_COMMENTS';
+export const DELETE_COMMENT = 'DELETE_COMMENT';
+export const UPDATE_COMMENT = 'UPDATE_COMMENT';
+export const ADD_COMMENT = 'ADD_COMMENT';
+export const GET_ALL_USERS = 'GET_ALL_USERS';
+export const GET_ARTICLE = 'GET_ARTICLE';
+export const ADD_ARTICLE = 'ADD_ARTICLE';
+export const UPDATE_ARTICLE = 'UPDATE_ARTICLE';
+export const DELETE_ARTICLE = 'DELETE_ARTICLE';
+export const GET_LOGININFO = 'GET_LOGININFO';
