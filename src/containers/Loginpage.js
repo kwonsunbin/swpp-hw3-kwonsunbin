@@ -7,8 +7,8 @@ import { Redirect } from 'react-router';
 
 class Loginpage extends Component {
   state = {
-    email: 'swpp@snu.ac.kr',
-    pw: 'iluvswpp',
+    email: '',
+    pw: '',
   };
   componentDidMount() {
     this.props.onGetLogInInfo();

@@ -195,7 +195,7 @@ class Articledetailpage extends Component {
                   className="full"
                   onClick={() => {
                     this.props.onPostComment({
-                      id: this.props.comments.length + 2,
+                      id: this.props.comments.length + 100,
                       article_id: parseInt(this.props.match.params.id),
                       author_id: this.props.logInInfo.id,
                       content: this.state.comment,

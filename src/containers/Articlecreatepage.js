@@ -159,7 +159,7 @@ class Articlecreatepage extends Component {
                   this.props.onPostArticle({
                     title: this.state.title,
                     content: this.state.content,
-                    id: this.props.articles.length + 10,
+                    id: this.props.articles.length + 100,
                     author_id: this.props.logInInfo.id,
                   });
                 }}

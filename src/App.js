@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Loginpage from './containers/Loginpage';
+import Initial from './components/Initial.js';
 import Articlelistpage from './containers/Articlelistpage';
 import Articleeditpage from './containers/Articleeditpage';
 import Articledetailpage from './containers/Articledetailpage';
@@ -12,6 +13,7 @@ function App(props) {
   return (
     <ConnectedRouter history={props.history}>
       <Switch>
+        <Route exact path="/" component={Initial}></Route>
         <Route exact path="/login" component={Loginpage}></Route>
         <Route
           exact
