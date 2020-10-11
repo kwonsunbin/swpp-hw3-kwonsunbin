@@ -20,7 +20,7 @@ class Articlecreatepage extends Component {
       this.props.history.push('/login');
     }
     return (
-      <Grid container>
+      <Grid container className="articlecreatepage">
         <Grid item xs={11}>
           <h1>Article create page</h1>
         </Grid>
@@ -68,7 +68,7 @@ class Articlecreatepage extends Component {
           {this.state.mode === 'write' ? (
             <Fragment>
               <Grid item xs={12} align="center">
-                <h1>write-mode</h1>
+                <h1 className="write_mode">write-mode</h1>
               </Grid>
               <Grid item xs={3} align="center">
                 <p>title</p>
@@ -100,7 +100,7 @@ class Articlecreatepage extends Component {
           ) : (
             <Fragment>
               <Grid item xs={12} align="center">
-                <h1>preview-mode</h1>
+                <h1 className="preview_mode">preview-mode</h1>
               </Grid>
 
               <Grid item xs={3} align="center">

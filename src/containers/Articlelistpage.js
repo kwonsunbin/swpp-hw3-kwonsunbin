@@ -34,7 +34,7 @@ class Articlelistpage extends Component {
     }
 
     return (
-      <Grid container>
+      <Grid container className="articlelistpage">
         <Grid item xs={11}>
           <h1>Article list page</h1>
         </Grid>

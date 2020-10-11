@@ -22,7 +22,6 @@ class Comment extends Component {
                 onClick={() => {
                   let content = prompt(
                     'Fill in the content',
-                    `${this.props.content}`,
                     `${this.props.content}`
                   );
                   if (content !== null && content !== '') {

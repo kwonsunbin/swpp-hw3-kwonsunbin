@@ -4,12 +4,13 @@ import { withRouter } from 'react-router';
 class Article extends Component {
   render() {
     return (
-      <Grid container>
-        <Grid item xs={1}>
+      <Grid container className="article">
+        <Grid className="articleId" item xs={1}>
           {this.props.article.id}
         </Grid>
         <Grid item xs={10}>
           <button
+            className="articleButton"
             onClick={() => {
               this.props.history.push(`articles/${this.props.article.id}`);
             }}
@@ -17,7 +18,7 @@ class Article extends Component {
             {this.props.article.title}
           </button>
         </Grid>
-        <Grid item xs={1}>
+        <Grid className="articleAuthor" item xs={1}>
           {this.props.authorName}
         </Grid>
       </Grid>

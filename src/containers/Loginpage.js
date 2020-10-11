@@ -26,7 +26,7 @@ class Loginpage extends Component {
       return <Redirect to="/articles" />;
     }
     return (
-      <Grid container>
+      <Grid container className="loginpage">
         <Grid item xs={12}>
           <h1>Login page</h1>
         </Grid>

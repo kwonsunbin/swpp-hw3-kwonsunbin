@@ -61,7 +61,7 @@ class Articledetailpage extends Component {
     }
 
     return (
-      <Grid container>
+      <Grid container className="articledetailpage">
         <Grid item xs={11}>
           <h1>Article {this.props.match.params.id} detail page</h1>
         </Grid>

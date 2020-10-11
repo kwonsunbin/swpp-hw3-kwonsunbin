@@ -34,7 +34,7 @@ class Articleeditpage extends Component {
     }
 
     return (
-      <Grid container>
+      <Grid container className="articleeditpage">
         <Grid item xs={11}>
           <h1>Article {this.props.match.params.id} edit page</h1>
         </Grid>
@@ -80,7 +80,7 @@ class Articleeditpage extends Component {
 
           {this.state.mode === 'write' ? (
             <Fragment>
-              <Grid item xs={12} align="center">
+              <Grid item xs={12} align="center" className="writeTab">
                 <h1>write-mode</h1>
               </Grid>
               <Grid item xs={3} align="center">
@@ -115,7 +115,7 @@ class Articleeditpage extends Component {
             </Fragment>
           ) : (
             <Fragment>
-              <Grid item xs={12} align="center">
+              <Grid item xs={12} align="center" className="previewTab">
                 <h1>preview-mode</h1>
               </Grid>
 
@@ -181,7 +181,7 @@ class Articleeditpage extends Component {
             {!this.state.title || !this.state.content ? (
               <button
                 id="confirm-edit-article-button"
-                className="button"
+                className="button disabled"
                 disabled
               >
                 confirm
