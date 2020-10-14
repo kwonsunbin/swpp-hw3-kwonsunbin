@@ -40,17 +40,15 @@ class Articlelistpage extends Component {
         </Grid>
 
         <Grid item xs={1} align="end">
-          {this.props.logInInfo.logged_in ? (
-            <button
-              id="logout-button"
-              onClick={() => {
-                this.props.logOut(this.props.logInInfo);
-                this.props.history.push('/login');
-              }}
-            >
-              log-out
-            </button>
-          ) : null}
+          <button
+            id="logout-button"
+            onClick={() => {
+              this.props.logOut(this.props.logInInfo);
+              this.props.history.push('/login');
+            }}
+          >
+            log-out
+          </button>
         </Grid>
 
         {articles}

@@ -15,7 +15,10 @@ describe('<Article/>', () => {
     expect(wrapper.length).toBe(1);
   });
 
-  it('should have good edit-comment-button', () => {
+  it('should have good edit-comment-button1', () => {
+    const spyPrompt = jest.spyOn(window, 'prompt').mockImplementation(() => {
+      return 'hi';
+    });
     const mockClickDone = jest.fn();
     const component = shallow(
       <Comment.WrappedComponent
@@ -27,6 +30,23 @@ describe('<Article/>', () => {
     const wrapper = component.find('#edit-comment-button');
     wrapper.simulate('click');
     expect(mockClickDone).toHaveBeenCalledTimes(1);
+  });
+
+  it('should have good edit-comment-button2', () => {
+    const spyPrompt = jest.spyOn(window, 'prompt').mockImplementation(() => {
+      return '';
+    });
+    const mockClickDone = jest.fn();
+    const component = shallow(
+      <Comment.WrappedComponent
+        onPut={mockClickDone}
+        author_id="1"
+        current_user_id="1"
+      />
+    );
+    const wrapper = component.find('#edit-comment-button');
+    wrapper.simulate('click');
+    expect(mockClickDone).toHaveBeenCalledTimes(0);
   });
 
   it('should have good delete-comment-button', () => {

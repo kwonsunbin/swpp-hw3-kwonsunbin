@@ -127,60 +127,20 @@ describe('<Articlelistpage />', () => {
   });
 
   it('should have good create-article-button', () => {
-    const mockedPushTemp = jest.fn();
-    const mockedHistoryTemp = { push: mockedPushTemp };
+    const spyPush = jest.spyOn(history, 'push').mockImplementation(() => {});
+
     const stubInitStateTemp = {
       logInInfo: {
         id: 1,
         logged_in: true,
       },
-      articles: [
-        {
-          id: 0,
-          author_id: 1,
-          title: 'TEST_TITLE_2',
-          content: 'TEST_CONTENT_2',
-        },
-        {
-          id: 1,
-          author_id: 1,
-          title: 'TEST_TITLE_2',
-          content: 'TEST_CONTENT_2',
-        },
-        {
-          id: 2,
-          author_id: 1,
-          title: 'TEST_TITLE_3',
-          content: 'TEST_CONTENT_3',
-        },
-      ],
-      users: [
-        {
-          id: 1,
-          email: 'TEST_EMAIL_1',
-          password: 'TEST_PW_1',
-          name: 'TEST_NAME_1',
-          logged_in: true,
-        },
-        {
-          id: 2,
-          email: 'TEST_EMAIL_2',
-          password: 'TEST_PW_2',
-          name: 'TEST_NAME_2',
-          logged_in: false,
-        },
-      ],
     };
     const mockStoreTemp = getMockStore(stubInitStateTemp);
     const component = mount(
       <Provider store={mockStoreTemp}>
         <ConnectedRouter history={history}>
           <Switch>
-            <Route
-              path="/"
-              exact
-              render={() => <Articlelistpage history={mockedHistoryTemp} />}
-            />
+            <Route path="/" exact render={() => <Articlelistpage />} />
             <Route
               path="/login"
               exact
@@ -192,7 +152,7 @@ describe('<Articlelistpage />', () => {
     );
     let wrapper = component.find('#create-article-button');
     wrapper.simulate('click');
-    expect(mockedPushTemp).toHaveBeenCalledTimes(1);
+    expect(spyPush).toHaveBeenCalledTimes(1);
   });
 
   it('should have good log-out button', () => {
@@ -208,6 +168,8 @@ describe('<Articlelistpage />', () => {
   });
 
   it('should not render Articleeditpage when user not logged in', () => {
+    const spyPush = jest.spyOn(history, 'push').mockImplementation(() => {});
+
     mockStore = getMockStore(stubInitialStateLO);
     const component = mount(
       <Provider store={mockStore}>
